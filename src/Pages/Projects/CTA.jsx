@@ -44,12 +44,12 @@ const CTA = () => {
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
 
             {/* Primary */}
             <Link to="/contact">
               <button className="
-                flex items-center justify-center gap-2
+                flex items-center justify-center w-full gap-2
                 px-6 py-3 rounded-lg text-white
                 bg-indigo-500 hover:bg-indigo-600
                 

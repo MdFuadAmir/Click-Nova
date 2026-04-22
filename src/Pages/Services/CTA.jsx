@@ -58,7 +58,7 @@ const CTA = () => {
                 border border-[#d6ccff80] dark:border-[#ffffff1a]
                 text-[#2a2540] dark:text-[#e6e1ff]
                 hover:bg-white/40 dark:hover:bg-white/10
-                flex items-center gap-2
+                flex items-center justify-center gap-2
               "
             >
               <FaDownload />
