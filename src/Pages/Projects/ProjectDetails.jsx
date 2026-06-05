@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useParams, Navigate, Link } from "react-router";
+import { useParams, Navigate, Link, useNavigate } from "react-router";
 import { projectsData } from "../../../public/Data/ProjectData";
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
 import SEO from "../../Utils/SEO";
 
 const ProjectDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const project = projectsData.find((p) => p.id.toString() === id);
 
@@ -187,14 +188,20 @@ const ProjectDetails = () => {
             Want a similar project?
           </h3>
 
-          <Link to="/contact">
-            <button
-              className="mt-4 px-6 py-2.5 rounded-lg text-white
+          <button
+            onClick={() =>
+              navigate("/contact", {
+                state: {
+                  message:
+                    "Hello! I'd like to start a new web development project and would appreciate a consultation regarding the best solution.",
+                },
+              })
+            }
+            className="mt-4 px-6 py-2.5 rounded-lg text-white
             bg-indigo-500 hover:bg-indigo-600"
-            >
-              Contact Me
-            </button>
-          </Link>
+          >
+            Contact Me
+          </button>
         </div>
       </div>
     </section>

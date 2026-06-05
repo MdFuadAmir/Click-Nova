@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaDownload, FaPaperPlane } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const CTASection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-18 md:py-24 px-6 sm:px-10 lg:px-20 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center">
@@ -43,8 +44,15 @@ const CTASection = () => {
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             {/* PRIMARY BUTTON */}
-            <Link
-              to={"/contact"}
+            <button
+              onClick={() =>
+                navigate("/contact", {
+                  state: {
+                    message:
+                      "Hello! I need a responsive MERN stack web application and would like to discuss the features and timeline.",
+                  },
+                })
+              }
               className="flex items-center justify-center gap-2
               px-6 py-3 rounded-lg text-white
               bg-indigo-600 hover:bg-indigo-700
@@ -52,7 +60,7 @@ const CTASection = () => {
             >
               <FaPaperPlane />
               Hire Me
-            </Link>
+            </button>
 
             {/* SECONDARY BUTTON */}
             <a

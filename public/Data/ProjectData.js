@@ -1,11 +1,9 @@
-
-import img1 from "../Images/p1.png";
-import img2 from "../Images/p2.png";
-import img3 from "../Images/p3.png";
-import img4 from "../Images/p4.png";
-import img5 from "../Images/p5.png";
-import img6 from "../Images/p6.png";
-
+import img1 from "../../src/assets/project1.png"
+import img2 from "../../src/assets/p1.png"
+import img3 from "../../src/assets/p2.png"
+import img4 from "../../src/assets/p3.png"
+import img5 from "../../src/assets/p5.png"
+import img6 from "../../src/assets/project6.png"
 
 export const projectsData = [
   {
@@ -61,14 +59,11 @@ export const projectsData = [
     duration: "2 Weeks",
     role: "Frontend Developer",
 
-    challenge:
-      "Creating smooth animations without affecting performance.",
+    challenge: "Creating smooth animations without affecting performance.",
 
-    solution:
-      "Used Framer Motion carefully and optimized animation triggers.",
+    solution: "Used Framer Motion carefully and optimized animation triggers.",
 
-    outcome:
-      "A visually appealing and smooth-performing portfolio website.",
+    outcome: "A visually appealing and smooth-performing portfolio website.",
 
     features: [
       "Responsive Design",
@@ -98,21 +93,13 @@ export const projectsData = [
     duration: "1.5 Months",
     role: "Fullstack Developer",
 
-    challenge:
-      "Managing user roles and secure content management.",
+    challenge: "Managing user roles and secure content management.",
 
-    solution:
-      "Implemented role-based authentication and secure APIs.",
+    solution: "Implemented role-based authentication and secure APIs.",
 
-    outcome:
-      "A stable and user-friendly blogging system.",
+    outcome: "A stable and user-friendly blogging system.",
 
-    features: [
-      "User Authentication",
-      "Post CRUD",
-      "Comments",
-      "Admin Panel",
-    ],
+    features: ["User Authentication", "Post CRUD", "Comments", "Admin Panel"],
 
     tech: ["Next.js", "Node.js", "MongoDB"],
 
@@ -135,14 +122,11 @@ export const projectsData = [
     duration: "2 Months",
     role: "Backend Developer",
 
-    challenge:
-      "Handling large data and real-time updates efficiently.",
+    challenge: "Handling large data and real-time updates efficiently.",
 
-    solution:
-      "Optimized API responses and used efficient query handling.",
+    solution: "Optimized API responses and used efficient query handling.",
 
-    outcome:
-      "A fast and responsive analytics dashboard.",
+    outcome: "A fast and responsive analytics dashboard.",
 
     features: [
       "Real-time Data",
@@ -172,14 +156,11 @@ export const projectsData = [
     duration: "10 Days",
     role: "UI Developer",
 
-    challenge:
-      "Balancing design aesthetics with performance.",
+    challenge: "Balancing design aesthetics with performance.",
 
-    solution:
-      "Optimized UI components and used lightweight animations.",
+    solution: "Optimized UI components and used lightweight animations.",
 
-    outcome:
-      "A clean, modern and conversion-focused landing page.",
+    outcome: "A clean, modern and conversion-focused landing page.",
 
     features: [
       "Modern UI",
@@ -209,14 +190,11 @@ export const projectsData = [
     duration: "1 Month",
     role: "Fullstack Developer",
 
-    challenge:
-      "Implementing smooth drag-and-drop with real-time sync.",
+    challenge: "Implementing smooth drag-and-drop with real-time sync.",
 
-    solution:
-      "Used optimized state management and efficient backend sync.",
+    solution: "Used optimized state management and efficient backend sync.",
 
-    outcome:
-      "A responsive and user-friendly task management app.",
+    outcome: "A responsive and user-friendly task management app.",
 
     features: [
       "Drag & Drop",

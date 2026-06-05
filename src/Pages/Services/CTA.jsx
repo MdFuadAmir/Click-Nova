@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-24 px-6 sm:px-10 lg:px-20">
       <div className="max-w-5xl mx-auto">
@@ -39,14 +40,22 @@ const CTA = () => {
           {/* BUTTONS */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             {/* PRIMARY */}
-            <Link to={'/contact'}
+            <button
+              onClick={() =>
+                navigate("/contact", {
+                  state: {
+                    message:
+                      "Hi! I need a high-converting landing page for my business and would like a quote.",
+                  },
+                })
+              }
               className="
                 px-6 py-3 rounded-lg text-sm text-white
                 bg-indigo-500 hover:bg-indigo-600
               "
             >
               Hire Me
-            </Link>
+            </button>
 
             {/* SECONDARY */}
             {/* SECONDARY BUTTON */}

@@ -1,22 +1,23 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FaBars, FaTimes } from "react-icons/fa";
 import DarkMood from "../Utils/DarkMood";
 import Logo from "../Utils/Logo";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Projects", path: "/projects" },
+  { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <nav
@@ -33,7 +34,7 @@ const Navbar = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* LOGO */}
-       <Logo/>
+        <Logo />
 
         {/* DESKTOP */}
         <div className="hidden md:flex items-center gap-8">
@@ -68,13 +69,21 @@ const Navbar = () => {
           <DarkMood />
 
           {/* CTA */}
-          <Link to={'/contact'}
+          <button
+            onClick={() =>
+              navigate("/contact", {
+                state: {
+                  message:
+                    "Hello! I need a custom business website with a clean design and would like to discuss the project details.",
+                },
+              })
+            }
             className="px-5 py-2 rounded-xl text-white text-sm
             bg-linear-to-r from-purple-500 to-indigo-500
             hover:scale-105 "
           >
             Hire Me
-          </Link>
+          </button>
         </div>
 
         {/* MOBILE */}

@@ -4,18 +4,31 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { FaEnvelope, FaClock, FaGlobe, FaPaperPlane } from "react-icons/fa";
 import SEO from "../../Utils/SEO";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const location = useLocation();
+  const state = location.state;
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
+    setValue,
   } = useForm();
+
+  useEffect(() => {
+    if (!state) return;
+    // CASE 1
+    if (state.message) {
+      setValue("message", state.message);
+      return;
+    }
+  }, [state, setValue]);
 
   const onSubmit = async (data) => {
     setLoading(true);

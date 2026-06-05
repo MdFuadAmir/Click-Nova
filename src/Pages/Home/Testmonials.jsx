@@ -64,7 +64,7 @@ const Testimonials = () => {
         </div>
 
         {/* SCROLL AREA */}
-        <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
+        <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory p-4 no-scrollbar">
           {testimonials.map((t, i) => (
             <div
               key={i}

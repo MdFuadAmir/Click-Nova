@@ -1,8 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaDownload, FaPaperPlane } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-24 px-6 sm:px-10 lg:px-20 relative overflow-hidden">
       {/* BACKGROUND */}
@@ -51,8 +53,15 @@ const CTA = () => {
             </a>
 
             {/* CONTACT */}
-            <a
-              href="/contact"
+            <button
+              onClick={() =>
+                navigate("/contact", {
+                  state: {
+                    message:
+                      "Hi Click Nova! I'm looking for a professional portfolio website and would like to learn more about your services.",
+                  },
+                })
+              }
               className="flex items-center justify-center gap-2
               px-6 py-3 rounded-lg text-sm
               border border-[#d6ccff60] dark:border-[#ffffff1a]
@@ -62,7 +71,7 @@ const CTA = () => {
             >
               <FaPaperPlane />
               Contact Me
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>

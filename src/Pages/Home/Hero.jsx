@@ -8,12 +8,14 @@ import {
   FaCode,
   FaCheckCircle,
 } from "react-icons/fa";
-import profile from "../../../public/Images/pro1.png";
-import { Link } from "react-router";
+import profile from "../../assets/own2.png";
+import { Link, useNavigate } from "react-router";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className="md:min-h-screen flex items-center px-6 sm:px-10 lg:px-20 py-20 relative overflow-hidden">
+    <section className="md:min-h-screen flex items-center max-w-7xl mx-auto px-6  py-24 md:py-28 relative overflow-hidden">
       {/* BACKGROUND */}
       <div
         className="absolute inset-0 -z-10
@@ -62,13 +64,20 @@ const Hero = () => {
             I build scalable and clean web apps with modern technologies.
           </p>
 
-          <Link
-            to={"/contact"}
+          <button
+            onClick={() =>
+              navigate("/contact", {
+                state: {
+                  message:
+                    "Hi! I'm interested in building a modern website for my business. I'd love to discuss the project requirements and get a quote.",
+                },
+              })
+            }
             className="px-5 py-2.5 rounded-lg text-sm text-white
             bg-indigo-500 hover:bg-indigo-600"
           >
             Hire Me
-          </Link>
+          </button>
         </div>
 
         {/* CENTER IMAGE */}

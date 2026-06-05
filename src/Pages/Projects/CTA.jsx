@@ -1,21 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { FaPaperPlane, FaGithub } from "react-icons/fa";
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 px-6 sm:px-10 lg:px-20 relative overflow-hidden">
-
       {/* BACKGROUND */}
-      <div className="absolute inset-0 -z-10
+      <div
+        className="absolute inset-0 -z-10
         bg-linear-to-br
         from-[#f3e8ff] via-[#e0f2fe] to-[#dcfce7]
         dark:from-[#1a1230] dark:via-[#1f163d] dark:to-[#151028]"
       />
 
       <div className="max-w-4xl mx-auto text-center">
-
         {/* CARD */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -31,7 +31,6 @@ const CTA = () => {
             shadow-lg
           "
         >
-
           {/* TITLE */}
           <h2 className="text-3xl sm:text-4xl font-bold text-[#2a2540] dark:text-[#e6e1ff]">
             Got a Project in Mind?
@@ -45,19 +44,27 @@ const CTA = () => {
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-
             {/* Primary */}
-            <Link to="/contact">
-              <button className="
-                flex items-center justify-center w-full gap-2
+
+            <button
+              onClick={() =>
+                navigate("/contact", {
+                  state: {
+                    message:
+                      "Hi! I need a high-converting landing page for my business and would like a quote.",
+                  },
+                })
+              }
+              className="
+                flex items-center justify-center gap-2
                 px-6 py-3 rounded-lg text-white
                 bg-indigo-500 hover:bg-indigo-600
                 
-              ">
-                <FaPaperPlane />
-                Contact Me
-              </button>
-            </Link>
+              "
+            >
+              <FaPaperPlane />
+              Contact Me
+            </button>
 
             {/* Secondary */}
             <a
@@ -75,11 +82,8 @@ const CTA = () => {
               <FaGithub />
               View GitHub
             </a>
-
           </div>
-
         </motion.div>
-
       </div>
     </section>
   );
